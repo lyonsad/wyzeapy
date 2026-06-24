@@ -75,7 +75,7 @@ class ScaleService(BaseService):
         return [
             Scale(d.raw_dict)
             for d in self._devices
-            if d.type is DeviceTypes.SCALE
+            if d.product_model in ("WL_SCU", "WL_SC2", "JA.SC", "JA.SC2")
         ]
 
     async def update(self, scale: Scale) -> Scale:
